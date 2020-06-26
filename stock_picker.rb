@@ -25,3 +25,40 @@ def stock_picker(array)
 end
 
 stock_picker([17,3,6,9,15,8,6,1,10])
+
+# ALTERNATIVE SOLUTION 1
+
+# def stock_picker(arr)
+#     arr
+#       .map         
+#       .with_index{|el, i| [el, i]}
+#       .combination(2)
+#       .max_by { |day1, day2| day2[0] - day1[0] }
+#       .map(&:last)
+#   end
+
+  
+
+
+
+
+# ALTERNATIVE SOLUTION 2
+
+# Stock picker project
+
+# stock_prices = [17,3,6,9,15,8,6,1,10]
+
+
+# hash_prices = Hash.new
+# stock_prices.each_with_index {|item, index| hash_prices["Day #{index}"] = item}
+# arr = hash_prices.to_a
+# arr = arr.permutation(2).to_a
+
+
+# p sorted = arr.delete_if { |v| v[0][0] > v[1][0]}.delete_if {|v| 
+# v[0][1] > v[1][1]
+# }.sort_by {|v| v[1][1] - v[0][1] }.reverse
+# puts
+
+# print "The best day to buy is #{sorted[0][0][0]} and the best day to sell
+# is #{sorted[0][1][0]} for a profit of #{sorted[0][1][1] - sorted[0][0][1]} "
